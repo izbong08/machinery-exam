@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>건설기계정비기능사 실기 모의고사</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f3ee;color:#202e2c;font-family:"Inter","Malgun Gothic",sans-serif;word-break:keep-all}
+main{width:min(740px,92%);margin:clamp(24px,8vh,88px) auto}
+header{background:#173932;color:white;padding:clamp(24px,6vw,50px);border-radius:14px 14px 0 0;border-bottom:6px solid #edbd60}
+header p{color:#ddede3;font-size:16px;margin:0 0 14px}h1{margin:0;font-size:clamp(32px,6vw,52px);letter-spacing:-.06em}
+section{background:#fff;border:1px solid #d8ddd5;border-top:0;padding:clamp(20px,5vw,40px);border-radius:0 0 14px 14px}
+h2{font-size:20px;margin:0 0 18px}small{color:#53635c;font-weight:400;margin-left:8px}
+dl{margin:0}dl div{padding:13px 0;display:flex;justify-content:space-between;border-top:1px solid #dce1dc}dd{margin:0;font-weight:700}
+button{width:100%;border:0;background:#205444;color:#fff;font:inherit;font-weight:700;padding:16px;border-radius:8px;margin-top:20px;cursor:pointer}button:hover{background:#123f31}button:focus-visible{outline:3px solid #ae741d;outline-offset:3px}
+ol{list-style:none;margin:0;padding:0}li{display:grid;grid-template-columns:3ch 1fr;gap:16px;padding:20px 0;border-top:1px solid #dce1dc}li span{font-size:20px;font-weight:700;color:#356553;font-variant-numeric:tabular-nums}li b{color:#53635c;font-size:13px}li p{margin:5px 0 0;font-size:18px;line-height:1.65}
+.secondary{margin-top:10px;background:#fff;border:1px solid #729284;color:#205444}
+.secondary:hover{background:#eff5f1}
+#catalog h3{margin:32px 0 12px;color:#205444}
+#catalog li p{margin:0}
+.study-note{margin-top:10px;padding:12px 16px;background:#f0f5f1;border-left:3px solid #799c87;border-radius:4px;font-size:15px;line-height:1.65;overflow-wrap:anywhere}
+.study-note b{color:#315844}
+.study-note ul{padding-left:1.2em;margin:4px 0 0}
+.study-note li{display:list-item;border:0;padding:2px 0}
+.measure{padding-top:7px}.measure+.measure{border-top:1px solid #d4e0d7;margin-top:8px}
+.action{color:#345245}#exam-back{margin-bottom:16px}
+.note-text{white-space:pre-line;margin-top:5px}
+</style>
+</head>
+<body><main>
+<header><p>건설기계정비기능사</p><h1>실기 모의고사</h1></header>
+<section id="intro"><h2>출제 구성<small>총 10문제</small></h2>
+<dl><div><dt>엔진</dt><dd>3문제</dd></div><div><dt>전기</dt><dd>2문제</dd></div><div><dt>차체 일반</dt><dd>4문제</dd></div><div><dt>차체 필수 · 휠 실린더와 라이닝 관련</dt><dd>1문제</dd></div></dl>
+<button id="start">모의고사 풀기</button>
+<button class="secondary" id="browse">전체 문제 보기</button></section>
+<section id="catalog" hidden>
+<h2 id="catalog-title" tabindex="-1">전체 문제<small>총 54문제</small></h2>
+<button class="secondary" id="back">첫 화면으로</button>
+<div id="subjects"></div>
+</section>
+<section id="exam" hidden><h2 tabindex="-1" id="heading">시험 문제<small>총 10문제</small></h2><button class="secondary" id="exam-back">첫 화면으로</button><ol id="questions"></ol><button id="again">새 모의고사 풀기</button></section>
+<!-- 조치사항 편집 시작: 과목과 번호(예: note-차체-2)를 검색한 뒤, 해당 script의 시작 태그와 종료 태그 사이에 내용을 입력하세요. 엔터로 줄을 나눌 수 있습니다. -->
+
+<!-- 엔진 -->
+
+<script type="text/plain" id="note-엔진-1" data-label="측정 및 불량 시 조치">
+크랭크축 유격 측정
+드라이버 밀고 당기기
+불량 시 · 스러스트 베어링 교환 후 재측정
+
+메인저널 오일간극 측정
+플라스틱 게이지 이용한 측정
+메인저널 베어링 교환 후 재측정
+
+크랭크축 마멸량 측정
+불량 시 · 크랭크축 교환 후 재측정
+</script>
+
+<script type="text/plain" id="note-엔진-2" data-label="측정 및 불량 시 조치">
+캠 양정 측정
+외경 마이크로 미터, 다이얼게이지
+불량 시 · 캠축 교환 후 재측정
+
+홈 측정
+</script>
+
+<script type="text/plain" id="note-엔진-3" data-label="측정 및 불량 시 조치">
+피스톤 간극
+내경 – 외경
+불량 시 · 라이너와 피스톤을 교환 후 재점검
+
+링끝 간극 측정
+2시 4시 재기, 0.35부터 시작
+불량 시 · 피스톤 링 교환 후 재측정
+
+실린더 마모량 측정
+1번답 보어게이지 외경
+2번답
+(보어게이지 외경-측정시 바늘의 눈금)-표준값
+불량 시 · 실린더 교환 후 재측정
+</script>
+
+<script type="text/plain" id="note-엔진-4" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-엔진-5" data-label="조치 메모">
+라디에이터 캡 교환 후 재측정
+</script>
+
+<script type="text/plain" id="note-엔진-6" data-label="조치 메모">
+규정값 27, 측정값 30 실린더 내에 카본 제거 후 재측정
+규정값 35, 피스톤 간극, 링끝 간극, 실린더 마모량을 점검한다. (헤드 가스킷 점검, 흡·배기 밸브 간극 점검)
+</script>
+
+<script type="text/plain" id="note-엔진-7" data-label="조치 메모">
+조정 스크류를 오른쪽(왼쪽, 규정값보다 클때)으로 돌려서 규정값으로 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-엔진-8" data-label="조치 메모">
+점도를 점검한다. 윤활회로가 막혔는지 점검한다.
+</script>
+
+<script type="text/plain" id="note-엔진-9" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-엔진-10" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-엔진-11" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-엔진-12" data-label="조치사항">
+
+</script>
+
+<!-- 전기 -->
+
+<script type="text/plain" id="note-전기-1" data-label="고장 사례">
+알터네이터 커넥터 이탈
+스타터 컨트롤러 커넥터 이탈
+</script>
+
+<script type="text/plain" id="note-전기-2" data-label="고장 사례">
+좌측 콤비네이션 스위치 커넥터 이탈
+램프 스위치 커넥터 이탈
+헤드램프 릴레이 코일 단선
+우측 헤드 램프 커넥터 이탈
+전조등 30A 퓨즈 단선
+</script>
+
+<script type="text/plain" id="note-전기-3" data-label="고장 사례">
+스타터 컨트롤러 커넥터 이탈
+스타터 릴레이(1) 커넥터 이탈
+스타터 릴레이(2) 코일 단선
+프리히트 릴레이 커넥터 이탈
+에어 히터 접지 단자 이탈
+</script>
+
+<script type="text/plain" id="note-전기-4" data-label="고장 사례">
+리시버 드라이어 커넥터 이탈
+콤프레셔 커넥터 이탈
+에어컨 퓨즈 단선
+에어컨 컨트롤 스위치 커넥터 이탈
+</script>
+
+<script type="text/plain" id="note-전기-5" data-label="고장 사례">
+좌측 콤비네이션 스위치 커넥터 이탈
+와이퍼 모터 커넥터 이탈
+와이퍼 컨트롤러 커넥터 이탈
+와이퍼 퓨즈 단선
+</script>
+
+<script type="text/plain" id="note-전기-6" data-label="고장 사례">
+좌측 콤비네이션 스위치 커넥터 이탈
+혼 퓨즈 단선
+혼 릴레이 코일 단선
+</script>
+
+<script type="text/plain" id="note-전기-7" data-label="고장 사례">
+좌측 콤비네이션 스위치 커넥터 이탈
+전방 우측 방향지시등 커넥터 이탈
+좌측 콤비 램프 커넥터 이탈
+우측 콤비 램프 커넥터 이탈
+블링커 유닛 커넥터 이탈
+방향지시등 퓨즈 단선
+</script>
+
+<script type="text/plain" id="note-전기-8" data-label="시동 상태 메모">
+시동 X
+</script>
+
+<script type="text/plain" id="note-전기-9" data-label="시동 상태 메모">
+시동 X
+</script>
+
+<script type="text/plain" id="note-전기-10" data-label="시동 상태 메모">
+시동 켠 상태
+</script>
+
+<script type="text/plain" id="note-전기-11" data-label="시동 상태 메모">
+시동 켠 상태
+</script>
+
+<script type="text/plain" id="note-전기-12" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-전기-13" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-전기-14" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-전기-15" data-label="조치사항">
+
+</script>
+
+<!-- 차체 -->
+
+<script type="text/plain" id="note-차체-1" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-2" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-3" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-4" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-5" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-6" data-label="조치 메모">
+틸트 실린더 로드 길이를 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-7" data-label="조치 메모">
+브레이크 마스터 실린더 푸시로드 길이를 규정값으로 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-8" data-label="조치 메모">
+브레이크 드럼 교환 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-9" data-label="조치 메모">
+트랙 장력 실린더 구리스 주입 or 배출 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-10" data-label="조치 메모">
+체인 장착 더블 너트를 풀고 로드를 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-11" data-label="조치 메모">
+타이로드 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-12" data-label="조치 메모">
+틸트 실린더 로드 길이를 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-13" data-label="조치 메모">
+조향 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-14" data-label="조치 메모">
+메인 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-15" data-label="조치 메모">
+보조 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-16" data-label="조치 메모">
+조향 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-17" data-label="조치 메모">
+메인 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-18" data-label="조치 메모">
+메인 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-19" data-label="조치 메모">
+메인 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-20" data-label="조치 메모">
+메인 릴리프 밸브 압력 조정 후 재측정
+</script>
+
+<script type="text/plain" id="note-차체-21" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-22" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-23" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-24" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-25" data-label="부품 메모">
+메인펌프
+</script>
+
+<script type="text/plain" id="note-차체-26" data-label="조치사항">
+
+</script>
+
+<script type="text/plain" id="note-차체-27" data-label="조치사항">
+
+</script>
+
+<!-- 조치사항 편집 끝 -->
+<script>
+const engine = [
+'디젤엔진의 크랭크축을 탈거하여 기록표의 내용을 측정·판정한 후 조립하시오.',
+'디젤엔진의 캠축을 탈거하여 기록표의 내용을 측정·판정한 후 조립하시오.',
+'디젤엔진의 피스톤을 탈거하여 기록표의 내용을 측정·판정한 후 조립하시오.',
+'연료필터를 교환한 후 공기빼기 작업을 하고 시동 관련 전기회로 및 부품을 점검하여 이상 부분을 조치한 후 시동하시오.',
+'엔진의 라디에이터 캡 압력을 점검하여 기록·판정하시오.',
+'엔진의 압축압력을 점검하여 기록·판정하시오.',
+'엔진의 분사노즐을 점검하여 기록·판정하시오.',
+'엔진오일 압력을 점검하여 기록·판정하시오.',
+'엔진의 분사시기를 점검하여 기록·판정하시오.',
+'엔진의 연료 압력을 점검하여 기록·판정하시오.',
+'엔진의 흡기 또는 배기 밸브 간극을 측정하여 기록·판정하시오.',
+'엔진 회전수를 점검하여 기록·판정하시오.'
+];
+const electric = [
+...['충전회로','전조등 회로','기동 및 예열장치 회로','에어컨 회로','윈드 실드 와이퍼 회로','경음기 회로','방향지시등 회로'].map(name => name+'를 점검하여 고장 내용을 기록·판정하시오.'),
+'기동전동기 전압강하 시험을 실시하여 기록·판정하시오.',
+'기동전동기 전류 소모 시험을 실시하여 기록·판정하시오.',
+'발전기의 충전전압을 점검하여 기록·판정하시오.',
+'발전기의 충전전류를 점검하여 기록·판정하시오.',
+'예열플러그 저항을 점검하여 기록·판정하시오.',
+'기동전동기의 전자석(마그네틱) 스위치를 점검하여 기록·판정하시오.',
+'축전지 용량(부하 측정 시험)을 측정하여 기록·판정하시오.',
+'건설기계 엔진에서 기동전동기 소모전류를 점검하여 기록·판정하시오.'
+];
+const chassis = [
+'무한궤도식 건설기계의 캐리어 롤러(상부 롤러)를 탈거하여 확인받은 후 조립하시오.',
+'지게차의 마스트 전경각을 측정하여 기록·판정하시오.',
+'브레이크 페달 유격을 점검하여 기록·판정하시오.',
+'브레이크 드럼 마멸량을 점검하여 기록·판정하시오.',
+'무한궤도식 건설기계의 트랙 장력을 측정하여 기록·판정하시오.',
+'지게차의 리프트 상승 높이를 측정하여 기록·판정하시오.',
+'지게차의 핸들 유격을 측정하여 기록·판정하시오.',
+'지게차의 마스트 후경각을 측정하여 기록·판정하시오.',
+'로더의 조향 시 조향밸브 압력을 점검하여 기록·판정하시오.',
+'지게차의 리프트 압력을 점검하여 기록·판정하시오.',
+'지게차의 틸트 압력을 측정하여 기록·판정하시오.',
+'지게차의 조향밸브 압력을 측정하여 기록·판정하시오.',
+'굴착기의 붐 상승 릴리프 압력을 측정하여 기록·판정하시오.',
+'굴착기의 버킷 오므림 압력을 측정하여 기록·판정하시오.',
+'로더의 붐 상승 압력을 측정하여 기록·판정하시오.',
+'로더의 틸트 압력을 측정하여 기록·판정하시오.',
+...['기어 형식 유압펌프를','조향 실린더를','복동식 유압실린더를','메인 컨트롤 밸브 어셈블리를','액시얼 피스톤 유압펌프를','조향 펌프를','스윙 모터를'].map(part=>part+' 분해·점검하고 이상 부분을 기록한 후 조립하시오.')
+];
+const required = ['브레이크 라이닝을','브레이크 휠 실린더를','휠 실린더와 라이닝을','라이닝을'].map(part=>part+' 탈거하여 확인받은 후 조립하시오.');
+function draw(pool,count){
+  const shuffled=pool.slice();
+  for(let i=0;i<count;i++){
+    const j=i+Math.floor(Math.random()*(shuffled.length-i));
+    [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];
+  }
+  return shuffled.slice(0,count);
+}
+function startExam(){
+  const list=document.getElementById('questions');
+  list.replaceChildren();
+  for(const [subject,pool,count] of [['엔진',engine,3],['전기',electric,2],['차체',chassis,4],['차체 필수',required,1]]){
+    for(const question of draw(pool,count)){
+      const item=document.createElement('li');
+      const number=document.createElement('span');
+      number.textContent=String(list.children.length+1).padStart(2,'0');
+      const content=document.createElement('div');
+      const label=document.createElement('b');
+      label.textContent=subject;
+      const prompt=document.createElement('p');
+      prompt.textContent=question;
+      content.append(label,prompt);
+      item.append(number,content);
+      list.append(item);
+    }
+  }
+  document.getElementById('intro').hidden=true;
+  document.getElementById('exam').hidden=false;
+  document.getElementById('heading').focus({preventScroll:true});
+  window.scrollTo(0,0);
+}
+const allChassis = [required[0], chassis[0], ...required.slice(1), ...chassis.slice(1)];
+function showCatalog(){
+  const subjects = document.getElementById('subjects');
+  if (!subjects.children.length) {
+    for (const [name, questions] of [['엔진', engine], ['전기', electric], ['차체', allChassis]]) {
+      const heading = document.createElement('h3');
+      heading.textContent = name + ' · ' + questions.length + '문제';
+      const list = document.createElement('ol');
+      questions.forEach((question, index) => {
+        const item = document.createElement('li');
+        const number = document.createElement('span');
+        number.textContent = String(index + 1).padStart(2, '0');
+        const prompt = document.createElement('p');
+        prompt.textContent = question;
+        const content = document.createElement('div');
+        content.append(prompt);
+        const source = document.getElementById('note-' + name + '-' + (index + 1));
+        const text = source.textContent.trim();
+        if (text) {
+          const note = document.createElement('aside');
+          note.className = 'study-note';
+          const title = document.createElement('b');
+          title.textContent = source.dataset.label;
+          const body = document.createElement('div');
+          body.className = 'note-text';
+          body.textContent = text;
+          note.append(title, body);
+          content.append(note);
+        }
+        item.append(number, content);
+        list.append(item);
+      });
+      subjects.append(heading, list);
+    }
+  }
+  document.getElementById('intro').hidden = true;
+  document.getElementById('catalog').hidden = false;
+  document.getElementById('catalog-title').focus({preventScroll:true});
+  window.scrollTo(0, 0);
+}
+document.getElementById('browse').addEventListener('click', showCatalog);
+function returnHome(view, trigger) {
+  document.getElementById(view).hidden = true;
+  document.getElementById('intro').hidden = false;
+  document.getElementById(trigger).focus({preventScroll:true});
+  window.scrollTo(0, 0);
+}
+document.getElementById('back').addEventListener('click', () => returnHome('catalog', 'browse'));
+document.getElementById('exam-back').addEventListener('click', () => returnHome('exam', 'start'));
+document.getElementById('start').addEventListener('click',startExam);
+document.getElementById('again').addEventListener('click',startExam);
+</script>
+</main></body></html>
